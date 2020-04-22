@@ -1,5 +1,4 @@
 import { CONSTANTS } from '../actions';
-import { Draggable } from 'react-beautiful-dnd';
 
 export const addList = title => {
     return {
@@ -13,7 +12,8 @@ export const sort = (
     droppableIdEnd,
     droppableIndexStart,
     droppableIndexEnd,
-    draggableId
+    draggableId,
+    type
 ) => {
     return{
         type: CONSTANTS.DRAG_HAPPENED,
@@ -22,7 +22,8 @@ export const sort = (
             droppableIdEnd,
             droppableIndexStart,
             droppableIndexEnd,
-            draggableId
+            draggableId,
+            type
         }
     };
 };

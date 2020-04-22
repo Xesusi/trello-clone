@@ -55,17 +55,15 @@ class TrelloActionButton extends React.Component{
     renderActionButton = () =>{
         const { list } = this.props;
 
-        const buttonText = list ? "Add another list" : "Add another card"
-        const buttonTextOpacity = list ? 1 : 0.5
-        const buttonTextColor = list ? "white" : "inherit"
-        const buttonTextBackground = list ? "rgba(0,0,0,.15)" : "inherit"
+        const buttonText = list ? "Добавить новый список" : "Добавить новую задачу"
+        const buttonTextColor = "#dcdcdc"
+        const buttonTextBackground = "#393E46"
 
         return(
             <div
                 onClick={this.openForm}
                 style={{
                     ...styles.openFormButtonGroup,
-                    opacity: buttonTextOpacity,
                     color: buttonTextColor,
                     backgroundColor: buttonTextBackground
                 }}
@@ -80,10 +78,10 @@ class TrelloActionButton extends React.Component{
         const { list } = this.props;
 
         const placeholder = list 
-        ? "Enter list title..." 
-        : "Enter a title for this card..."; 
+        ? "Введите название списка..." 
+        : "Введите текст задачи..."; 
 
-        const buttonTitle = list ? "Add List" : "Add Card";
+        const buttonTitle = list ? "Добавить список" : "Добавить задачу";
 
         return (
             <div>
