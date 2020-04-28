@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import TrelloList from './TrelloList';
+import TrelloList from './List';
 import { connect } from 'react-redux';
-import TrelloActionButton from './TrelloActionButton';
+import TrelloActionButton from './ActionButton';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import { sort } from '../actions';
 import styled from 'styled-components';
@@ -12,7 +12,7 @@ const ListsContainer = styled.div`
 `;
 
 class App extends Component{
-    
+
     onDragEnd = (result) =>{
         const {destination, source, draggableId, type} = result;
 
@@ -26,7 +26,7 @@ class App extends Component{
                 destination.droppableId,
                 source.index,
                 destination.index,
-                draggableId, 
+                draggableId,
                 type
             )
         );
@@ -36,8 +36,8 @@ class App extends Component{
         const { lists } = this.props;
         return(
             <DragDropContext onDragEnd={this.onDragEnd}>
-                <div className="App">
-                    <Droppable droppableId="all-lists" direction="horizontal" type="list">
+                <div className='App'>
+                    <Droppable droppableId='all-lists' direction='horizontal' type='list'>
                         {provided =>(
                             <ListsContainer
                                 {...provided.droppableProps}
@@ -53,9 +53,9 @@ class App extends Component{
                                 />
                             ))}
                             <TrelloActionButton list />
-                        </ListsContainer>    
-                        )}  
-                    </Droppable>        
+                        </ListsContainer>
+                        )}
+                    </Droppable>
                 </div>
             </DragDropContext>
         );
